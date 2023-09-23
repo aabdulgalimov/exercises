@@ -26,9 +26,7 @@ def check_orders(take_out: list[int], dine_in: list[int], served: list[int]) -> 
             p_in += 1
         else:
             return False
-    if p_out != len(take_out) or p_in != len(dine_in):
-        return False
-    return True
+    return p_out == len(take_out) and p_in == len(dine_in)
 
 
 cases = (
