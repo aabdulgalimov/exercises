@@ -4,7 +4,7 @@ What if we wanted to merge several sorted lists? Write a function that takes as 
 Do we absolutely have to allocate a new list to use for the merged output? Where else could we store our merged list? How would our function need to change?
 
 Time: O(n)
-Time: O(1)
+Space: O(1)
 """
 from typing import Generator
 
