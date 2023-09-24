@@ -31,5 +31,10 @@ def jump(nums: list[int]) -> int:
     return jump_count
 
 
-nums = [2, 3, 1, 1, 4]
-print(jump(nums))
+cases = (
+    ([2, 3, 1, 1, 4], 2),
+    ([2, 3, 0, 1, 4], 2),
+)
+for nums, want in cases:
+    got = jump(nums)
+    assert got == want, f"got: {got}, want: {want} ({nums})"

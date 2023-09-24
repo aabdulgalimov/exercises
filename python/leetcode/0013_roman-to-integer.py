@@ -51,8 +51,5 @@ cases = (
     ("XLI", 41),
 )
 for s, want in cases:
-    result = roman_to_int(s)
-    if result != want:
-        print(s)
-        print(f"got: {result}, want: {want}")
-        break
+    got = roman_to_int(s)
+    assert got == want, f"got: {got}, want: {want} ({s})"

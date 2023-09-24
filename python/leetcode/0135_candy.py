@@ -54,8 +54,5 @@ cases = (
 )
 
 for ratings, want in cases:
-    result = candy(ratings)
-    if result != want:
-        print(ratings)
-        print(f"got: {result}, want: {want}")
-        break
+    got = candy(ratings)
+    assert got == want, f"got: {got}, want: {want} ({ratings})"

@@ -26,37 +26,16 @@ def rotate(nums: list[int], k: int) -> None:
     reverse(nums, k, len(nums) - 1)
 
 
-# cyclic O(n) & O(1)
+# pythonic alternative with O(n) space
 def rotate2(nums: list[int], k: int) -> None:
-    k %= len(nums)
-    count = 0
-    start = 0
-    while count < len(nums):
-        last_pos = start
-        last_item = nums[start]
-
-        while True:
-            next_pos = (last_pos + k) % len(nums)
-
-            temp = nums[next_pos]
-            nums[next_pos] = last_item
-            last_item = temp
-
-            count += 1
-            last_pos = next_pos
-            if start == last_pos:
-                break
-
-        start += 1
-
-
-# pythonic O(n) & O(n)
-def rotate3(nums: list[int], k: int) -> None:
     k %= len(nums)
     nums[:] = nums[-k:] + nums[:-k]
 
 
-nums = [1, 2, 3, 4, 5, 6, 7]
-k = 3
-rotate(nums, k)
-print(nums)
+cases = (
+    ([1, 2, 3, 4, 5, 6, 7], 3, [5, 6, 7, 1, 2, 3, 4]),
+    ([-1, -100, 3, 99], 2, [3, 99, -1, -100]),
+)
+for nums, k, want in cases:
+    rotate(nums, k)
+    assert nums == want, f"got: {nums}, want: {want} ({k})"

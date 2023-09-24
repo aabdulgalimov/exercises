@@ -45,13 +45,31 @@ class RandomizedSet:
         return self.rs_list[i]
 
 
-rs = RandomizedSet()
-print(
-    rs.insert(3),
-    rs.insert(3),
-    rs.insert(1),
-    rs.remove(3),
-    rs.insert(0),
-    rs.remove(0),
-    rs.get_random(),
+cases = (
+    (
+        ("insert", 1, True),
+        ("remove", 2, False),
+        ("insert", 2, True),
+        ("get_random", None, {1, 2}),
+        ("remove", 1, True),
+        ("insert", 2, False),
+        ("get_random", None, {2}),
+    ),
+    (
+        ("insert", 3, True),
+        ("insert", 3, False),
+        ("insert", 1, True),
+        ("remove", 3, True),
+        ("insert", 0, True),
+        ("remove", 0, True),
+        ("get_random", None, {1}),
+    ),
 )
+for case in cases:
+    rs = RandomizedSet()
+    for cmd, arg, want in case:
+        f = getattr(rs, cmd)
+        got = f() if arg is None else f(arg)
+        assert (
+            got in want if isinstance(want, set) else got == want
+        ), f"got: {got}, want: {want} ({cmd} {arg} {case})"

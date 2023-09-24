@@ -34,8 +34,5 @@ cases = (
     ([2, 3, 4], [3, 4, 3], -1),
 )
 for gas, cost, want in cases:
-    result = can_complete_circuit(gas, cost)
-    if result != want:
-        print(gas, cost)
-        print(f"got: {result}, want: {want}")
-        break
+    got = can_complete_circuit(gas, cost)
+    assert got == want, f"got: {got}, want: {want} ({gas} {cost})"

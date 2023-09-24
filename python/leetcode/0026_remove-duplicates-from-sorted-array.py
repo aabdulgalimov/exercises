@@ -24,6 +24,11 @@ def remove_duplicates(nums: list[int]) -> int:
     return k + 1
 
 
-nums = [0, 1, 2, 2, 2, 3, 4, 4]
-print(remove_duplicates(nums))
-print(nums)
+cases = (
+    ([1, 1, 2], [1, 2]),
+    ([0, 0, 1, 1, 1, 2, 2, 3, 3, 4], [0, 1, 2, 3, 4]),
+)
+for nums, want in cases:
+    k = remove_duplicates(nums)
+    got = nums[:k]
+    assert got == want, f"got: {got}, want: {want} ({nums})"

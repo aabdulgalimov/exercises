@@ -25,6 +25,11 @@ def two_sum(nums: list[int], target: int) -> list[int]:
         m[n] = i
 
 
-nums = [11, 15, 2, 7]
-target = 9
-print(two_sum(nums, target))
+cases = (
+    ([2, 7, 11, 15], 9, [0, 1]),
+    ([3, 2, 4], 6, [1, 2]),
+    ([3, 3], 6, [0, 1]),
+)
+for nums, target, want in cases:
+    got = two_sum(nums, target)
+    assert set(got) == set(want), f"got: {got}, want: {want} ({nums} {target})"

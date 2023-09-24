@@ -72,8 +72,5 @@ cases = (
     ([0], 0),
 )
 for height, want in cases:
-    result = trap(height)
-    if result != want:
-        print(height)
-        print(f"got: {result}, want: {want}")
-        break
+    got = trap(height)
+    assert got == want, f"got: {got}, want: {want} ({height})"

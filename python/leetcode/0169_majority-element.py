@@ -25,5 +25,10 @@ def majority_element(nums: list[int]) -> int:
     return candidate
 
 
-nums = [2, 2, 1, 1, 1, 2, 2]
-print(majority_element(nums))
+cases = (
+    ([3, 2, 3], 3),
+    ([2, 2, 1, 1, 1, 2, 2], 2),
+)
+for nums, want in cases:
+    got = majority_element(nums)
+    assert got == want, f"got: {got}, want: {want} ({nums})"

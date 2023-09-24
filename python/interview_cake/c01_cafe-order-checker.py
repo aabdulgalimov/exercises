@@ -38,8 +38,5 @@ cases = (
     ([1, 2, 1], [2, 1], [], False),
 )
 for take_out, dine_in, served, want in cases:
-    result = check_orders(take_out, dine_in, served)
-    if result != want:
-        print(take_out, dine_in, served)
-        print(f"got: {result}, want: {want}")
-        break
+    got = check_orders(take_out, dine_in, served)
+    assert got == want, f"got: {got}, want: {want} ({take_out} {dine_in} {served})"

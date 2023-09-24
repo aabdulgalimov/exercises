@@ -23,5 +23,10 @@ def can_jump(nums: list[int]) -> bool:
     return i + 1 == len(nums)
 
 
-nums = [2, 3, 0, 1, 4]
-print(can_jump(nums))
+cases = (
+    ([2, 3, 1, 1, 4], True),
+    ([3, 2, 1, 0, 4], False),
+)
+for nums, want in cases:
+    got = can_jump(nums)
+    assert got == want, f"got: {got}, want: {want} ({nums})"

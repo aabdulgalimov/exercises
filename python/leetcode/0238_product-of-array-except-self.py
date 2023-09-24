@@ -28,9 +28,6 @@ cases = (
     ([1, 2, 3, 4], [24, 12, 8, 6]),
     ([-1, 1, 0, -3, 3], [0, 0, 9, 0, 0]),
 )
-for arr_in, arr_out in cases:
-    result = product_except_self(arr_in)
-    if result != arr_out:
-        print(arr_in)
-        print(f"got: {result}, want: {arr_out}")
-        break
+for nums, want in cases:
+    got = product_except_self(nums)
+    assert got == want, f"got: {got}, want: {want} ({nums})"

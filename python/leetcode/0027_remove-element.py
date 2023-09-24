@@ -24,7 +24,11 @@ def remove_element(nums: list[int], val: int) -> int:
     return k
 
 
-nums = [0, 1, 2, 2, 3, 0, 4, 2]
-val = 2
-print(remove_element(nums, val))
-print(nums)
+cases = (
+    ([3, 2, 2, 3], 3, [2, 2]),
+    ([0, 1, 2, 2, 3, 0, 4, 2], 2, [0, 1, 4, 0, 3]),
+)
+for nums, val, want in cases:
+    k = remove_element(nums, val)
+    got = nums[:k]
+    assert set(got) == set(want), f"got: {got}, want: {want} ({nums} {val})"

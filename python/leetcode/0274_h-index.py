@@ -27,5 +27,10 @@ def h_index(citations: list[int]) -> int:
     return 0
 
 
-citations = [3, 0, 6, 1, 5]
-print(h_index(citations))
+cases = (
+    ([3, 0, 6, 1, 5], 3),
+    ([1, 3, 1], 1),
+)
+for citations, want in cases:
+    got = h_index(citations)
+    assert got == want, f"got: {got}, want: {want} ({citations})"

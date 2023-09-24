@@ -23,5 +23,11 @@ def max_profit(prices: list[int]) -> int:
     return total_profit
 
 
-prices = [7, 1, 3, 5, 3, 6, 4]
-print(max_profit(prices))
+cases = (
+    ([7, 1, 5, 3, 6, 4], 7),
+    ([1, 2, 3, 4, 5], 4),
+    ([7, 6, 4, 3, 1], 0),
+)
+for prices, want in cases:
+    got = max_profit(prices)
+    assert got == want, f"got: {got}, want: {want} ({prices})"

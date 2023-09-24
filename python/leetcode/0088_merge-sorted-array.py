@@ -31,9 +31,11 @@ def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> None:
         pos -= 1
 
 
-nums1 = [1, 2, 3, 0, 0, 0]
-m = 3
-nums2 = [2, 5, 6]
-n = 3
-merge(nums1, m, nums2, n)
-print(nums1)
+cases = (
+    ([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3, [1, 2, 2, 3, 5, 6]),
+    ([1], 1, [], 0, [1]),
+    ([0], 0, [1], 1, [1]),
+)
+for nums1, m, nums2, n, want in cases:
+    merge(nums1, m, nums2, n)
+    assert nums1 == want, f"got: {nums1}, want: {want} ({nums2} {n})"
