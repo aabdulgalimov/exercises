@@ -9,7 +9,7 @@ Constraints:
     The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
 
 Time: O(n)
-Space: O(1) (result not included)
+Space: O(1)
 """
 
 
