@@ -41,35 +41,31 @@ def is_tree_superbalanced(root: BinaryTreeNode) -> bool:
     return True
 
 
-tree1 = BinaryTreeNode(1)
-tree1.insert_left(2)
-
-tree2 = BinaryTreeNode(2)
-tree2.insert_left(2)
-tree2.insert_right(3)
-
-tree3 = BinaryTreeNode(3)
-tree3.insert_left(2)
-tree3.left.insert_left(3)
-
-tree4 = BinaryTreeNode(4)
-tree4.insert_left(2)
-tree4.insert_right(3)
-tree4.left.insert_left(4)
-
-tree5 = BinaryTreeNode(5)
-tree5.insert_left(2)
-tree5.insert_right(3)
-tree5.left.insert_left(4)
-tree5.left.left.insert_left(5)
-
 cases = (
-    (tree1, True),
-    (tree2, True),
-    (tree3, True),
-    (tree4, True),
-    (tree5, False),
+    (["root.insert_left(1)"], True),
+    (["root.insert_left(1)", "root.insert_right(2)"], True),
+    (["root.insert_left(1)", "root.left.insert_left(2)"], True),
+    (
+        [
+            "root.insert_left(1)",
+            "root.insert_right(2)",
+            "root.left.insert_left(3)",
+        ],
+        True,
+    ),
+    (
+        [
+            "root.insert_left(1)",
+            "root.insert_right(2)",
+            "root.left.insert_left(3)",
+            "root.left.left.insert_left(4)",
+        ],
+        False,
+    ),
 )
 for tree, want in cases:
-    got = is_tree_superbalanced(tree)
-    assert got == want, f"got: {got}, want: {want} ({tree.value})"
+    root = BinaryTreeNode(0)
+    for cmd in tree:
+        exec(cmd)
+    got = is_tree_superbalanced(root)
+    assert got == want, f"got: {got}, want: {want} ({tree})"
