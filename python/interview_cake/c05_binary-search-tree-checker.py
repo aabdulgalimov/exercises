@@ -1,8 +1,8 @@
 """
 Write a function to check that a binary tree is a valid binary search tree.
 
-Time: O()
-Space: O()
+Time: O(n)
+Space: O(n)
 """
 
 
