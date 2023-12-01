@@ -1,9 +1,13 @@
 """
 Find any non-minimum item in a given range within a sequence of integers. Return "NOT FOUND" if such item doesn't exist.
 
-Constraints:
-    1 <= sequence length <= 100
-    0 <= sequence item <= 1000
+Input:
+    First line contains two integers N and M, where 1 ≤ N ≤ 100 and 1 ≤ M ≤ 1000 - length of the sequence and amount of queries (ranges).
+    Second line - the sequence.
+    Starting from the third line - M requests with ranges L-R (each on a separate line), where L and R are zero-based indexes of the sequence.
+
+Output:
+    M lines, each containing a non-minimum item in a requested range or a string "NOT FOUND" if no such item exists.
 
 Time: O(n)
 Space: O(1)

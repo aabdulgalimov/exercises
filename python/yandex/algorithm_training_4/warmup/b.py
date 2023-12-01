@@ -1,8 +1,11 @@
 """
 Add two rational fractions a/b and c/d and print the result as an irreducible fraction m/n.
 
-Constraints:
-    1 <= a,b,c,d <= 100
+Input:
+    4 natural numbers a, b, c, d in the range of 1..100 (separated by a space).
+
+Output:
+    2 natural numbers m and n separated by a space.
 
 Time: O(1)
 Space: O(1)
