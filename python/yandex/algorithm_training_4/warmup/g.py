@@ -1,11 +1,11 @@
 """
 Rabbits are curious. They love to study geometry by runnig around garden beds. Our rabbit is just like that. Today he decided to study a new figure - a square.
-The rabbit is running around a field of N x M cells. Some of them are sown with carrots, some are not.
+The rabbit is running around a field of n by m cells. Some of them are sown with carrots, some are not.
 
 Help the rabbit to find a side length of the largest square fully filled with carrots.
 
 Input:
-    First line contains field dimensions - two integers N and M (1 <= N, M <= 1000).
+    First line contains field dimensions - two integers n and m (1 <= n, m <= 1000).
     Next N lines contain M integers separated by a space which which represent the cell state (1 if carrot is present, 0 otherwise).
 
 Output:
