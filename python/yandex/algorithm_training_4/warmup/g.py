@@ -11,8 +11,8 @@ Input:
 Output:
     Square side length.
 
-Time: O(n^m)
-Space: O(n^m)
+Time: O(n*m)
+Space: O(n*m)
 """
 import io
 from contextlib import redirect_stdout
