@@ -1,5 +1,5 @@
 """
-Implement a stack class "MaxStack" which in addition to default push/pop/peek operations has an additional get_max method that returns the largest item from the stack without removing it.
+Implement a stack class "MaxStack" which in addition to default push/pop/peek operations has a get_max method that returns the largest item from the stack without removing it.
 Assume that the stack will only contain integers.
 
 Time: O(1) for all methods
