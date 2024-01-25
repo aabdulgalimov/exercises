@@ -29,9 +29,9 @@ cases = (
     (1, [], None),
     (2, ["q.enqueue(1)", "q.dequeue()"], None),
 )
-for case, ops, want in cases:
+for case_id, ops, want in cases:
     q = Queue()
     for op in ops:
         exec(op)
     got = q.dequeue()
-    assert got == want, f"got: {got}, want: {want} ({case})"
+    assert got == want, f"got: {got}, want: {want} ({case_id})"

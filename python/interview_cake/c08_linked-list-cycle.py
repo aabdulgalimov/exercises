@@ -43,10 +43,10 @@ cases = (
         True,
     ),
 )
-for case, ops, want in cases:
+for case_id, ops, want in cases:
     first_node = LinkedListNode(1)
     n = first_node
     for op in ops:
         exec(op)
     got = contains_cycle(first_node)
-    assert got == want, f"got: {got}, want: {want} ({case})"
+    assert got == want, f"got: {got}, want: {want} ({case_id})"

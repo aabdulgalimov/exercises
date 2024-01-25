@@ -39,9 +39,9 @@ cases = (
         1,
     ),
 )
-for case, ops, want in cases:
+for case_id, ops, want in cases:
     head_node = LinkedListNode(1)
     for op in ops:
         exec(op)
     got = reverse_ll(head_node)
-    assert got.value == want, f"got: {got.value}, want: {want} ({case})"
+    assert got.value == want, f"got: {got.value}, want: {want} ({case_id})"

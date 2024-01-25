@@ -43,9 +43,9 @@ cases = (
     (1, [], None),
     (2, ["s.push(1)", "s.push(3)", "s.pop()", "s.push(0)"], 1),
 )
-for case, ops, want in cases:
+for case_id, ops, want in cases:
     s = MaxStack()
     for op in ops:
         exec(op)
     got = s.get_max()
-    assert got == want, f"got: {got}, want: {want} ({case})"
+    assert got == want, f"got: {got}, want: {want} ({case_id})"
