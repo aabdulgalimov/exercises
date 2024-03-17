@@ -16,9 +16,9 @@ def rand7():
 
 def rand5():
     while True:
-        num = rand7()
-        if num <= 5:
-            return num
+        n = rand7()
+        if n <= 5:
+            return n
 
 
 rand5()
